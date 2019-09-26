@@ -1,0 +1,339 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0081)http://webdeveloper.earthweb.com/repository/javascripts/2001/05/45001/flatcjs.htm -->
+<HTML><HEAD><TITLE></TITLE>
+<META content="text/html; charset=iso-8859-1" http-equiv=Content-Type>
+<META name="GENERATOR" content="IBM WebSphere Page Designer V3.5.3.2 for Windows">
+<META http-equiv="Content-Style-Type" content="text/css">
+<!-- ================================================== Begin of Configurable Part -->
+<STYLE type="text/css">
+<!--
+A:link {TEXT-DECORATION: none;}
+A:visited {TEXT-DECORATION: none;}
+TD {TEXT-ALIGN: center; VERTICAL-ALIGN: middle;}
+.CalHead {COLOR: white; FONT: bold 8pt Arial;}
+.CalCell {CURSOR: hand; FONT: 8pt Arial;}
+.HeadBtn {FONT: 10pt Fixedsys; HEIGHT: 22px; VERTICAL-ALIGN: middle; WIDTH: 18px;}
+.HeadBox {FONT-SIZE: 10pt; FONT-STYLE: normal; FONT-VARIANT: normal; FONT-WEIGHT: normal; LINE-HEIGHT: normal; VERTICAL-ALIGN: middle;}
+.Today {COLOR: white; FONT: bold 10pt Arial;}
+-->
+</STYLE>
+</HEAD>
+<BODY leftMargin="0" topMargin="0" marginheight="0" marginwidth="0" onMouseOver="status='';return true;">
+<SCRIPT language=JavaScript>
+<!--
+var gd = new Date();		// Get today's date
+var gToday = [gd.getFullYear(), gd.getMonth()+1, gd.getDate()];	// store it.
+var agenda = new Array;
+
+function popup(url) {
+  top.open(url, "pop", gsPopConfig);
+}
+
+var gBegin = [1995,1];		// Range begin at [Year,Month]
+var gEnd = [2100,12];		// Range end at [Year,Month]
+var gsOutOfRange = "The date is out of range!";
+
+var gsSplit = "/";		// separator of date string, AT LEAST one char.
+var gbEuroDate = true;		// true: M-D-Y ; false: D-M-Y
+var gbDigital = true;		// true: 01-05-2001 ; false: 1-May-2001
+var gbShortYear = false;   	// Set the year format in short, i.e. 79 instead of 1979
+var gsPopConfig = "top=200, left=200, width=400, height=200, scrollbars=1, resizable=1";// control the look of popup window
+
+var gMonths = new Array("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sept","Oct","Nov","Dec");
+var gWeekDay = new Array("Su","M","Tu","W","Th","F","Sa");
+var gbEuroCal = false;		// Show European Calendar - Sunday goes after Saturday
+var gsToday = "Today :&nbsp;"+ (gbEuroDate?(gbDigital?gToday[1]:gMonths[gToday[1]-1])+ (gbDigital?gsSplit:' ')+gToday[2]+ (gbDigital?gsSplit:', ')+ gToday[0]:gToday[2]+ (gbDigital?gsSplit:' ')+ (gbDigital?gToday[1]:gMonths[gToday[1]-1])+ (gbDigital?gsSplit:' ')+ gToday[0])// The expression of today.
+var gCurMonth = eval(self.name); // The calendar month currently shown, use "gToday" to show current month.
+
+var giCellWidth=16;		// Calendar cell width, use .CalCell font style to change height
+var gcToggle="#ffffcc";		// highlight color of focused cell
+var gcBG="#EEEEEE";		// Background color of the cells
+var gcTodayBG="#ccffcc";		// The background highlight color of today
+var gcFrame="teal";		// Frame color
+var gcWeekend="red";		// Weekend day color
+var gcWorkday="black";		// Workday color
+var gcCalBG="#6699cc";		// Background color of the calendar
+var gcSelected="yellow";	// Color of selected date
+var gcClick="#cc99cc";
+var gcOtherDay="rgb(182,182,182)";	// The color of other month day
+// gcOtherDay must be set in "rgb()" or literal format!!! to make the color-comparison work in NN6
+
+// The default action when you click on a normal date
+// Set the Javascript variable in the parent document to the selected date.
+var gsAction = "";
+// ==================================================== End of Configurable Part == 
+
+// Show the result date in a text field for validation!!!!
+// If don't want to show, comment next line out.
+//var gsAction = gsAction; +"self.parent.document.myForm.text1.value = self.parent.selectedDate;"
+var selectedDateArray = [0,0,0]; // [yy, mm, dd]
+
+function addEvent(date, desc, color, action) {	// load agenda events
+//  agenda[date] = new Array(desc, color, action);  // Perform action only
+  agenda[date] = new Array(desc, color, action+ ';'+gsAction); // Perform action and return selected Date
+}
+-->
+</SCRIPT>
+
+<SCRIPT language="JavaScript">
+<!-- Begin NON-EDITABLE part. Any modification to this part must mail the author!!!
+/****************************************************************************
+ FlatCalendar eXtremely Perfect (emailware), by Liming(Victor) Weng
+ Release date: 2001.5.16		Email: flatcal@yahoo.com
+Notice:
+ 1. This emailware is free only for non-commercial use, and must mail me first!
+ 2. For any commercial use, contact me to pay a small amount of license fee.
+ 3. Please respect my hard work. Any usage of or modification to this script without
+ the authorization from the author may be accused for a reimbursement up to USD$10,000 !!!
+ 4. Thanks to my wife Yang Liu, who helps and supports me during the development.
+*****************************************************************************/
+var gcbMon, gcbYear;
+var gcTemp = gcBG;
+var gfSelf = parent.document.getElementById(self.name);
+var gCellSet = new Array;
+var giSat = (gbEuroCal)?5:6;
+var giSun = (gbEuroCal)?6:0;
+if (gbEuroCal)
+	gWeekDay = new Array().concat(gWeekDay.slice(1), gWeekDay[0]);
+
+function fSetDate(y,m,d) {
+  if (!fCheckRange(y,m))
+	return;
+  gCurMonth = [y,m];
+  var action = fGetAgenda(y,m,d)[2];
+  if (action != null)
+	eval(action);
+}
+
+function fSetSelected(aCell) {
+  // Modified the original source to delay defining the gsAction string until the user selecting a date.
+  // The reason is we don't know which field in the parent input form will receive the selected date 
+  // until the user click on the icon to activate the calendar. The name of the receiver field is set
+  // in the global variable "selectedField" in the parent page.
+  
+  var outputFormat = self.parent.outputFormat;
+  var outputValue = "";
+  
+  // possible output format (default = "MM/dd/yyyy")
+  var FORMAT_MONTH	 		= "MM";
+  var FORMAT_YEAR  			= "yyyy";
+  var FORMAT_MONTH_YEAR 	= "MM/yyyy";
+  
+  var outputMonth = "(gbDigital?(selectedDateArray[1]<10?'0'+selectedDateArray[1]:selectedDateArray[1]):gMonths[selectedDateArray[1]-1])";
+  var outputYear = "selectedDateArray[0]";
+  var outputDate = "(selectedDateArray[2]<10?'0'+selectedDateArray[2]:selectedDateArray[2])";
+  var outputSplit = " + (gbDigital?gsSplit:' ') + ";
+  
+  if (outputFormat == FORMAT_MONTH) {
+    outputValue = outputMonth;
+  } else if (outputFormat == FORMAT_YEAR) {
+    outputValue = outputYear;
+  } else if (outputFormat == FORMAT_MONTH_YEAR) {
+    outputValue = outputMonth + outputSplit + outputYear;
+  } else {
+    outputValue = "(gbEuroDate?" + 
+    					outputMonth + outputSplit + outputDate + outputSplit + outputYear + 		// Euro format (MM/dd/yyyy)
+    				":" +
+	    				outputDate + outputSplit + outputMonth + outputSplit + outputYear + ")";	// Other format (dd/MM/yyyy)
+  }
+  outputValue = outputValue + ";"; // append a semicolon to the statement
+
+  gsAction = "self.parent.document.all['"+ self.parent.selectedField+"'].value = " + outputValue;
+  
+  // --------------------------
+  var s = fGetSelected(aCell);
+  selectedDateArray = [s[0],s[1],s[2]];
+  fSetDate(s[0],s[1],s[2]);
+  // --------------------------
+  // Modified the original source to close the calendar immediately upon selection
+  fCloseCalendar();
+}
+
+function fGetAgenda(y,m,d) {
+  var ag = agenda[fFormatDate(y,m,d)];
+  if (ag!=null)
+     alert (ag);
+  return (ag!=null)?ag:["",(d==gToday[2]&&m==gToday[1]&&y==gToday[0])?gcTodayBG:gcBG,gsAction];
+}
+
+function fFormatDate(y,m,d){
+  var f = gbEuroDate?gbDigital?m<10?"0"+m:m:gMonths[m-1]:gbDigital?d<10?"0"+d:d:d;
+  var s = gbEuroDate?gbDigital?d<10?"0"+d:d:d:gbDigital?m<10?"0"+m:m:gMonths[m-1];
+  var sy = y%100;
+
+  return (gbEuroDate?((gbDigital?m:gMonths[m-1])+ (gbDigital?'-':' ') + 
+    d + (gbDigital?'-':', ')+ (gbShortYear?sy<10?"0"+sy:sy:y)) :(d+ (gbDigital?'-':' ')+ 
+    (gbDigital?m:gMonths[m-1])+ (gbDigital?'-':' ')+ (gbShortYear?sy<10?"0"+sy:sy:y)));  
+
+//  return f+gsSplit+s+gsSplit+(gbShortYear?sy<10?"0"+sy:sy:y);
+}
+
+function fGetSelected(aCell){
+  //parent.window.status = ''; // Clear the Browser status line
+
+  var iOffset = 0;
+  var y = parseInt(gcbYear.value);
+  var m = parseInt(gcbMon.value);
+
+  aCell.bgColor=gcBG;
+  with (aCell.firstChild){
+  	var d = parseInt(innerHTML);
+  	if (style.color==gcOtherDay)
+		iOffset = (id<10)?-1:1;
+	m += iOffset;
+	if (m < 1) {
+		y--;
+		m = 12;
+	} else if (m > 12){
+		y++;
+		m = 1;
+	};
+	return [y,m,d];
+  }
+}
+
+function fBuildCal(y,m) {
+  var c = new Array();
+  for(i=1; i<7; i++)
+  	c[i] = new Array(i);
+
+  var dCalDate = new Date(y,m-1,1);
+  var iDayOfFirst = dCalDate.getDay();
+  if (gbEuroCal)
+	if (--iDayOfFirst < 0)
+		iDayOfFirst = 6;
+  var iDaysInMonth = new Date(y,m,0).getDate();
+  var iOffsetLast = new Date(y,m-1,0).getDate()-iDayOfFirst+1;
+  var iDate = 1;
+  var iNext = 1;
+
+  for (d=0; d<7; d++)
+	c[1][d]=(d<iDayOfFirst)?-(iOffsetLast+d):iDate++;
+  for (w=2; w<7; w++)
+  	for (d=0; d<7; d++)
+		c[w][d] = (iDate<=iDaysInMonth)?iDate++:-(iNext++);
+  return c;
+}
+
+function fDrawCal(iCellWidth) {
+  var styleTD = " width='"+iCellWidth+"' "; 
+  var id=0;
+
+  with (document) {
+	write("<tr>");
+	for(i=0; i<7; i++)
+		write("<td class='CalHead' "+styleTD+">"+gWeekDay[i]+"</td>");
+	write("</tr>");
+
+  	for (w=1; w<7; w++) {
+		write("<tr>");
+		for (d=0; d<7; d++) {
+			write("<td class='CalCell' "+styleTD+" onMouseOver='gcTemp=this.bgColor;this.bgColor=gcToggle;this.bgColor=gcToggle;' onMouseOut='this.bgColor=gcTemp;this.bgColor=gcTemp;' onclick='fSetSelected(this);this.bgColor=gcClick;'>");
+			write("<A id='"+(id++)+"' href='#null' onfocus='this.blur();'>00</A></td>")
+		}
+		write("</tr>");
+	}
+  }
+}
+
+function fUpdateCal(y,m) {
+  var c = fBuildCal(y,m);
+  var ag;
+  for (w=0; w<6; w++)
+	for (d=0; d<7; d++)
+		with (gCellSet[(7*w)+d]) {
+			if (c[w+1][d]<0) {
+				style.color = gcOtherDay;
+				innerHTML = -c[w+1][d];
+				ag = ["",gcBG];
+			} else{
+				style.color = (d==giSun||d==giSat)?gcWeekend:gcWorkday;
+				innerHTML = c[w+1][d];
+				ag = fGetAgenda(y,m,c[w+1][d]);
+			}
+			parentNode.title = ag[0];
+			parentNode.bgColor = ag[1];
+			parentNode.bgColor = ag[1]; // fix NN6 bug
+		}
+}
+
+function fCheckRange(y,m) {
+  if (y > gEnd[0] || y < gBegin[0] || (y==gBegin[0]&&m<gBegin[1]) || (y==gEnd[0]&&m>gEnd[1])) {
+	alert(gsOutOfRange);
+	gcbMon.options[gCurMonth[1]-1].selected = true;
+	gcbYear.options[gCurMonth[0]-gBegin[0]].selected = true;
+	return false;
+  }
+  return true;
+}
+
+function fSetCal(y,m){
+  if (!fCheckRange(y,m))
+	return;
+  gcbMon.options[m-1].selected = true;
+  gcbYear.options[y-gBegin[0]].selected = true;
+  fUpdateCal(y,m);
+  gCurMonth = [y,m];
+}
+
+function fPrevMonth(){
+  var m = gcbMon.value;
+  var y = gcbYear.value;
+
+  if (--m<1) { m=12; y--; }
+  fSetCal(y,m);
+}
+
+function fNextMonth(){
+  var m = gcbMon.value;
+  var y = gcbYear.value;
+
+  if (++m > 12) { m = 1; y++; }
+  fSetCal(y,m);
+}
+
+function fCloseCalendar(){
+   // Newly added
+	var cmd='parent.document.all.'+self.name+'.style.display="none"';
+	eval(cmd);
+}
+
+with (document) {
+  write("<table style='BORDER:ridge; border-color:" + gcCalBG + ";' border='1' cellpadding='0' cellspacing='0'>");
+  write("<tr><td>");
+  write("<TABLE id='popTable' bgcolor='"+gcCalBG+"' cellspacing='0' cellpadding='3' border='0'>");
+
+  write("<TR><TD align='center'>");
+  write("<table cellspacing='0' cellpadding='3' border='0'><tr><td width='90%' class='Today'>"+gsToday+"</td>");
+  write("<td align='right'><img src='../images/closeSquare16x16.gif' width='16' height='16' border='0' alt='' style='cursor:hand;' title='Close the calendar' onclick='fCloseCalendar();'/></td></tr></table>");
+  write("</TD></TR>");
+
+  write("<TR><TD align='center'><input type='button' value='<' class='HeadBtn' onClick='fPrevMonth()'>");
+  write("&nbsp;<select id='MonSelect' class='HeadBox' onChange='fSetCal(gcbYear.value, gcbMon.value)' Victor='Won'>");
+  for (i=0; i<12; i++)
+	write("<option value='"+(i+1)+"'>"+gMonths[i]+"</option>");
+  write("</SELECT><SELECT id='YearSelect' class='HeadBox' onChange='fSetCal(gcbYear.value, gcbMon.value)' Victor='Won'>");
+  for(i=gBegin[0];i<=gEnd[0];i++)
+  write("<OPTION value='"+i+"'>"+i+"</OPTION>");
+  write("</SELECT>&nbsp;<input type='button' value='>' class='HeadBtn' onclick='fNextMonth()'>");
+  write("</TD></TR><TR><TD align='center'>");
+  write("<DIV style='background-color:"+gcFrame+";width:"+((giCellWidth+6)*7+2)+"px;'><table border='0' cellpadding='2' >");
+  gcbMon=getElementById("MonSelect");
+  gcbYear=getElementById("YearSelect");
+  fDrawCal(giCellWidth);
+  gCellSet=getElementsByTagName("A"); 
+  fSetCal(gCurMonth[0],gCurMonth[1]);
+  write("</table></DIV></TD></TR>");
+//  write("<TR><TD align='center'><A href='#null' class='Today' title='"+fGetAgenda(gToday[0],gToday[1],gToday[2])[0]+"' onclick='fSetDate(gToday[0],gToday[1],gToday[2]); this.blur();' onMouseOver='gcTemp=this.style.color;this.style.color=gcToggle;' onMouseOut='this.style.color=gcTemp'>"+gsToday+"</A>");
+// Modified to remove the link
+//  write("<span class='Today'>"+gsToday+"</span></TD></TR>");
+  write("</TABLE>");
+  write("</td></tr>");
+  write("</table>");
+ 
+  gfSelf.width=getElementById("popTable").offsetWidth;
+  gfSelf.height=getElementById("popTable").offsetHeight;
+}
+// End  -->
+</SCRIPT>
+</BODY></HTML>

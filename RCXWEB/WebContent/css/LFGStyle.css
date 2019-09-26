@@ -1,0 +1,145 @@
+.body {
+	margin: 0px 20px 30px 20px;
+	background: -webkit-linear-gradient(top,  rgba(189,221,216,1) 0%,rgba(255,255,255,0) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  rgba(189,221,216,1) 0%,rgba(255,255,255,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+   
+}
+.nested-fs {background-color:#D9D9D9; border: solid 1px #00302A;} 
+.table{font-family: Times New Roman, Verdana, Geneva, Arial, Helvetica, sans-serif; color: #000;  font-size: 12pt; padding: 3px; margin: 3px}
+.nested-table{font-family: Times New Roman, Verdana, Geneva, Arial, Helvetica, sans-serif; color: #000;  font-size: 11pt;  border: 1px solid #30615A;background-color: #D9D9D9;}
+.textarea{font-family: Times New Roman, Verdana, Geneva, Arial, Helvetica, sans-serif; color: #000;  font-size: 12pt;}
+.righJustify {text-align:right;font-family: Times New Roman, Verdana, Geneva, Arial, Helvetica, sans-serif; color: #000;  font-size: 11pt;border: 1px solid black;}
+
+
+.mainTable{
+    margin: 5px;
+    background: -webkit-linear-gradient(top,  rgba(172,100,216,1) 0%,rgba(255,255,255,0) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  rgba(189,221,216,1) 0%,rgba(255,255,255,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    border-collapse:separate;
+    border:solid #577571 1px;
+    border-radius:20px;
+    -moz-border-radius:20px;
+    box-shadow: 0px 7px  5px rgba(0,0,0,0.6);
+	-moz-box-shadow: 0px 7px  5px  rgba(0,0,0,0.6);
+	-webkit-box-shadow: 0px 7px 5px  rgba(0,0,0,0.6);
+	-o-box-shadow: 0px 7px 5px  rgba(0,0,0,0.6);  
+}
+
+.busyBarBG { background-color: #16453E; }
+.busyBarDark  { background-color: #30615A; }
+.busyBarLight { background-color: #C7EEE7; }
+
+a.headerLink { font-family: Times New Roman, Arial;color: #17558c; font-weight:bold; font-size: 11pt;}
+a.headerLink:link { font-family: Times New Roman, Arial;color: #17558c; font-weight:bold; font-size: 11pt;}
+a.headerLink:active { font-family: Times New Roman, Arial;color: #17558c; font-weight:bold; font-size: 11pt;}
+a.headerLink:visited { font-family: Times New Roman, Arial;color: #17558c; font-weight:bold; font-size: 11pt;}
+a.headerLink:hover { font-family: Times New Roman, Arial;color: red; font-weight:bold; font-size: 11pt;}
+
+a.menuLink { font-family: Times New Roman, Arial;color: #114A82; font-weight:bold; font-size: 12pt;}
+a.menuLink:link { font-family: Times New Roman, Arial;color: #114A82; font-weight:bold; font-size: 12pt;}
+a.menuLink:active { font-family: Times New Roman, Arial;color: #114A82; font-weight:bold; font-size: 12pt;}
+a.hmenuLink:visited { font-family: Times New Roman, Arial;color: #114A82; font-weight:bold; font-size: 12pt;}
+a.menuLink:hover { font-family: Times New Roman, Arial;color: red; font-weight:bold; font-size: 12pt;}
+
+a.submenu { font-family: Times New Roman, Arial;color: #F4EA57; font-weight:bold; text-decoration:none;font-size: 10pt;}
+a.submenu:link { font-family: Times New Roman, Arial;color: #F4EA57; font-weight:bold; text-decoration:none; font-size: 10pt;}
+a.submenu:active { font-family: Times New Roman, Arial;color: #F4EA57; font-weight:bold; text-decoration:none; font-size: 10pt;}
+a.submenu:visited { font-family: Times New Roman, Arial;color: #F4EA57; font-weight:bold; text-decoration:none; font-size: 10pt;}
+a.submenu:hover { font-family: Times New Roman, Arial;color: #000; font-weight:bold; text-decoration:none; font-size: 10pt;}
+
+
+ .submenuRow{font-family: Times New Roman, Arial; color: #FFF;  font-size: 10pt;font-weight:bold;background-color: #52827A; }
+ .submenuRow.hover{font-family: Times New Roman, Arial; color: #FFF;  font-size: 10pt;font-weight:bold;background-color: #A1C8C2; }
+ .submenuTable {border-width: 1px;border-color: #FFF;border-collapse: collapse;}
+ .menu-table_border { border-style: solid; border-width: 1; border-color: #f4ea57; }
+ .menu-table { border-style: none; border-width: 1;  }
+ .button     { 
+ 	color:#000000; cursor:hand; font-weight:bold;  
+ 	background: rgb(204,204,204); /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(204,204,204,1) 0%, rgba(255,255,255,1) 47%, rgba(204,204,204,1) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, rgba(204,204,204,1) 0%,rgba(255,255,255,1) 47%,rgba(204,204,204,1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, rgba(204,204,204,1) 0%,rgba(255,255,255,1) 47%,rgba(204,204,204,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    border:solid #000000 1px;
+    border-radius:5px;
+    -moz-border-radius:5px;
+  }
+ .buttonOver { color:#000000; cursor:hand; font-weight:bold; border:1px solid #000000; filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#f4ea57', EndColorStr='#ffffff'); }
+ .table-content { border-style: solid; border-width: 2px; border-color: #17558c; font-family: Times New Roman, Arial; color: #000;  font-size: 11pt;background-color: #ffffff; padding: 5px}
+ .table-content td {padding: 2px}
+ .contentLight { border-style: solid; border-width: 1px; border-color: #17558c; font-family: Times New Roman, Arial; color: #000;  font-size: 11pt;background-color: #ffffff;}
+ .popup { border-style: solid; border-width: 1px; border-color: #000; font-family: Times New Roman, Arial; color: #000;  font-size: 11pt;background-color: #D9D9D9;}
+ .required { border-style: solid; border-width: 1px; border-color: red; }
+ .loginText{font-weight:bold; font-size: 11pt; font-family:  Times New Roman, Verdana, Geneva, Arial, Helvetica, sans-serif;}
+ .errorText{color:red;font-weight:bold; font-size: 11pt; font-family:  Times New Roman, Verdana, Geneva, Arial, Helvetica, sans-serif;}
+ .pageTitle{font-weight:bold; font-size: 14pt; font-family:  Times New Roman, Verdana, Geneva, Arial, Helvetica, sans-serif;color:#000;}
+ .pagingNav{font-family: Times New Roman, Arial; color: #000;  font-size: 11pt;font-weight:bold;background-color: #9E9E9E;}
+ .pagingHeader{font-family: Times New Roman, Arial; color: #000;  font-size: 11pt;font-weight:bold;filter:progid:DXImageTransform.Microsoft.Gradient(endColorstr='#9E9E9E', startColorstr='#eeeeee', gradientType='0')}
+ .pagingEvenRow{font-family: Times New Roman, Arial; color: #000;  font-size: 11pt;background-color: #FFFFFF; }
+ .pagingOddRow{font-family: Times New Roman, Arial; color: #000;  font-size: 11pt;background-color: #e4eaec; }
+ .pagingEvenRow.hover{font-family: Times New Roman, Arial; color: #000;  font-size: 11pt;background-color: #FFFFC0; }
+ .pagingOddRow.hover{font-family: Times New Roman, Arial; color: #000;  font-size: 11pt;background-color: #FFFFC0; }
+ 
+ .pagingTable{font-family: Times New Roman, Arial; color: #000;  font-size: 11pt;background-color: #CCCCCC;cell-spacing:1px; padding:2px;  border-style: solid; border-width: 2px; border-color: #17558c;}
+ .evenRow{font-family: Times New Roman, Arial; color: #000;  font-size: 11pt;background-color: #FFFFFF; }
+ .oddRow{font-family: Times New Roman, Arial; color: #000;  font-size: 11pt;background-color: #e4eaec; }
+ .lightGrey{font-family: Times New Roman, Arial; color: #000;  font-size: 11pt;background-color: #FAF5F5; }
+ .highlight{font-family: Times New Roman, Arial; color: #000;  font-size: 11pt;background-color: #f4ea57; }
+ .selectRow{font-family: Times New Roman, Arial; color: #000;  font-size: 11pt;background-color: #6bbbff; }
+ .navOn{font-family:Webdings;font-size:11pt;text-decoration:none;cursor:hand;color:#000000;}
+ .navOff{font-family:Webdings;font-size:11pt;text-decoration:none;cursor:hand;color:#666666;}
+ .lable{font-family: Times New Roman, Verdana, Geneva, Arial, Helvetica, sans-serif; color: #000 important!;  font-size: 12pt;}
+ .lableBold{font-family: Times New Roman, Verdana, Geneva, Arial, Helvetica, sans-serif; color: #000;  font-weight:bold;font-size: 12pt;}
+ .legendLable{font-family: Times New Roman, Verdana, Geneva, Arial, Helvetica, sans-serif; color: #0046D5;  font-size: 12pt;font-weight:bold;}
+ .read-only{background-color: #EDEBEB;text-align:right; font-weight: bold;font-family: Times New Roman, Verdana, Geneva, Arial, Helvetica, sans-serif; color: #000;  font-size: 11pt;}
+ .boldText{font-size: 12pt; font-weight:bold;font-family: Times New Roman, Verdana, Geneva, Arial, Helvetica, sans-serif;}
+ .bigBoldText{font-size: 14pt; font-weight:bold;font-family: Times New Roman, Verdana, Geneva, Arial, Helvetica, sans-serif;}
+ .headerText{font-size: 14pt; font-weight:bold;font-family: Times New Roman, Verdana, Geneva, Arial, Helvetica, sans-serif;color:#17558c;}
+ .boldLable{font-size: 12pt; font-weight:bold;font-family: Times New Roman, Verdana, Geneva, Arial, Helvetica, sans-serif;color:#17558c;}
+ .cap-lable{font-size: 10pt; font-weight:bold;font-family: Times New Roman, Verdana, Geneva, Arial, Helvetica, sans-serif;}
+ .border-on{border-style: solid; border-width: 1px; border-color: #7F9DB9; }
+ .customBox{border: 1px solid #A19C9C;background-color: white;font-size: 11pt;font-family: Times New Roman,Arial;}
+ .customBox1{ height: 18px; width:40px;border: 1px solid #A19C9C;background-color: white;font-size: 11pt;font-family: Times New Roman,Arial;}
+ .customBox2{ height: 18px; width:70px;border: 1px solid #A19C9C;background-color: white;font-size: 11pt;font-family: Times New Roman,Arial;}
+ .customBox3{ height: 18px; width:60px;border: 1px solid #A19C9C;background-color: white;font-size: 11pt;font-family: Times New Roman,Arial;}
+ .customBox4{ border: 1px solid #A19C9C;background-color: white;font-size: 11pt;font-family: Times New Roman,Arial;}
+ .progress {
+	  height: 25px;
+	  width: 600px;
+	  margin-bottom: 20px;
+	  overflow: hidden;
+	  background-color: #f5f5f5;
+	  border-radius: 4px;
+  	 -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1);
+      box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1);
+}
+.progress-bar {
+	  float: left;
+	  width: 0;
+	  height: 100%;
+	  font-size: 14px;
+	  font-weight: bold;
+	  line-height: 20px;
+	  color: #000;
+	  text-align: center;
+	  background: -moz-linear-gradient(top,  rgba(44,95,88,1) 0%, rgba(241,241,241,1) 50%, rgba(225,225,225,1) 51%, rgba(44,95,88,1) 100%); /* FF3.6-15 */
+      background: -webkit-linear-gradient(top,  rgba(44,95,88,1) 0%,rgba(241,241,241,1) 50%,rgba(225,225,225,1) 51%,rgba(44,95,88,1) 100%); /* Chrome10-25,Safari5.1-6 */
+      background: linear-gradient(to bottom,  rgba(44,95,88,1) 0%,rgba(241,241,241,1) 50%,rgba(225,225,225,1) 51%,rgba(44,95,88,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+
+    -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .15);
+	          box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .15);
+	  -webkit-transition: width .6s ease;
+	       -o-transition: width .6s ease;
+	          transition: width .6s ease;
+}
+
+myProgress {
+  width: 100%;
+  background-color: #ddd;
+}
+
+#myBar {
+  width: 50%;
+  height: 50px;
+  background-color: #577571;
+}
+ 

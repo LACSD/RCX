@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--******************************************************************************
+//* Copyright (c) 2019 Sanitation Districts of Los Angeles. All Rights Reserved.
+//* Filename:		lfg_config.xml
+//* Revision: 		1.0
+//* Author:         CHRISSIMMONS@LACSD.ORG
+//* Created On: 	08-12-2019
+//* Modified by:	
+//* Modified On:	
+//*					
+//* Description:	JNDI, DB2/JDBC, & RCX Settings for the dix Application
+/******************************************************************************///-->
+<application>
+
+	<!-- APPLICATION ERROR EMAIL RECIPIENT -->
+	<app.error.contact.email>hho@lacsd.org</app.error.contact.email>
+
+	<!-- JNDI RESOURCES -->
+	<providerUrl>iiop:///</providerUrl>
+
+	
+	<!-- SQL RESOURCES -->
+	<SQLServer2K.dataSourceName>jdbc/rcxDataSource_SQL</SQLServer2K.dataSourceName>
+	
+	<!-- Report Portal URL -->
+	<iportal.url>http://testreport.lacsd.org/iportal</iportal.url>
+	
+	<!-- OSX SERVER CONFIGURATION (Note: Exact Port Should Be Defined!) -->
+	<OSXServer.iiop_fullpath>iiop://cs145:2809</OSXServer.iiop_fullpath>
+
+
+    <osxurl>http://cs145.lacsd.org:9080/osx/Login.do?actionName=globalSetup&amp;appURL=http://cs145.lacsd.org:9080/lfg</osxurl>
+	<employeeurl>http://cs145.lacsd.org:9080/osx/EmployeeRole.do?actionName=globalSetup&amp;applicationID=lfg</employeeurl>
+	<roleurl>http://cs145.lacsd.org:9080/osx/RoleActivity.do?actionName=globalSetup&amp;applicationID=lfg</roleurl>
+
+</application>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<libraries:Library xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:libraries="http://www.ibm.com/websphere/appserver/schemas/5.0/libraries.xmi" xmi:id="Library_1395242759203" name="Web 2.0 Feature Pack Library">
+  <classPath>${WAS_INSTALL_ROOT}/optionalLibraries/web2mobile/webmsg_applib.jar</classPath>
+  <classPath>${WAS_INSTALL_ROOT}/optionalLibraries/web2mobile/wink-jaxrs-webdav.jar</classPath>
+  <classPath>${WAS_INSTALL_ROOT}/optionalLibraries/web2mobile/rpcadapter/RPCAdapter-annotation.jar</classPath>
+  <classPath>${WAS_INSTALL_ROOT}/optionalLibraries/web2mobile/rpcadapter/RPCAdapter.jar</classPath>
+</libraries:Library>

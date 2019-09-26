@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title></title>
+<link rel="stylesheet" href="../css/WAXStyle.css" type="text/css" />
+
+<script language="javascript" type="text/javascript">
+function closeIFrame()
+{
+  parent.fadeOut();
+}
+</script>
+</head> 
+
+<body onclick="closeIFrame();" onkeypress="closeIFrame();" >
+  <table bgcolor="#ffffff" style="border-style: double; border-color:#558B97;" align="center" cellpadding="10" width="100%">
+    <tr>
+      <td valign="top" width="10">
+        <script language="javascript" type="text/javascript">
+          if (window.parent.messageType == "info")
+            document.write('<img src="../images/iconInfo.gif" alt="" />');
+          else
+            document.write('<img src="../images/iconError.gif" alt="" />');
+        </script>
+      </td>
+      <td valign="top">
+        <script language="javascript" type="text/javascript">
+          if (window.parent.messageType == "info")
+            document.write('<div style=\"height:80; overflow: auto;\">');
+          else
+            document.write('<div class=\"error\" style=\"height:80; overflow: auto;\">');
+
+          document.write(window.parent.message);
+
+          // If there is error root cause (stack trace),
+          // don't show it but allow user to report it via email.
+          if (window.parent.messageRootCause != "") {
+
+            document.write("<a href='mailto:"
+              + window.parent.appErrorContactEmail
+		 	  + "?subject=" + window.parent.appName + "%20Error%20Root%20Cause%20%2D%20" + window.parent.dateTime
+              + "&body=" + window.parent.messageRootCause 
+              + "'>If you believe this to be an error, click here to report it.</a>.");
+          }
+          
+          document.write("</div>");
+        </script>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

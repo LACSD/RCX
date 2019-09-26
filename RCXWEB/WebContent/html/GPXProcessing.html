@@ -1,0 +1,35 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>New Window</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<META name="GENERATOR" content="IBM WebSphere Page Designer V3.5.3.2 for Windows">
+<META http-equiv="Content-Style-Type" content="text/css">
+<link rel="stylesheet" href="../css/DIXStyle.css" type="text/css">
+<script language="javascript">
+
+function callServlet() {
+     if (top.frames["mainFrame"] == null) {
+	     opener.document.forms[0].submit();
+	} else {
+	     top.frames["mainFrame"].location = top.frames["leftFrame"].document.forms[0].servletName.value;
+	}
+}
+</script>
+</head>
+<body onload="busyBarOn();callServlet();">
+<input type="hidden" name="rptWindow">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr> 
+      <th class="pageTitle" width="40"></th>
+      <th class="pageTitle">Processing</th>
+      <th class="pageTitle" width="40" align="left"></th>
+    </tr>
+</table>
+<br />
+<script language="javascript" src="../javascript/busyBar.js"> </script> 
+<script language="javascript" src="../javascript/comboBox.js"> </script> 
+
+
+</body>
+</html>

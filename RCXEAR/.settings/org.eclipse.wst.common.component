@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="RCXEAR">
+        <wb-resource deploy-path="/" source-path="/" tag="defaultRootSource"/>
+        <dependent-module archiveName="LACSDCommonEJB.jar" deploy-path="/lib" handle="module:/resource/LACSDCommonEJB/LACSDCommonEJB">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="LACSDCommonLib.jar" deploy-path="/lib" handle="module:/resource/LACSDCommonLib/LACSDCommonLib">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="LACSDCommonWEB.jar" deploy-path="/lib" handle="module:/resource/LACSDCommonWEB/LACSDCommonWEB">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="RCXEJB.jar" deploy-path="/" handle="module:/resource/RCXEJB/RCXEJB">
+            <dependent-object>Module_1565800105876</dependent-object>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="RCXWEB.war" deploy-path="/" handle="module:/resource/RCXWEB/RCXWEB">
+            <dependent-object>Module_1565800105877</dependent-object>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="RCXResources.jar" deploy-path="/lib" handle="module:/resource/RCXResources/RCXResources">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+    </wb-module>
+</project-modules>

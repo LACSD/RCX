@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+  <Appenders>
+    <RollingFile name="RCXLog" fileName="F:/Applog/RCX/RCX.log"
+                  filePattern="F:/Applog/RCX/RCX-%d{yyyy-MM-dd-HH}-%i.log">
+      <PatternLayout>
+        <Pattern>%d %p %c{1.} [%t] %m%n</Pattern>
+      </PatternLayout>
+      <Policies>
+      	<SizeBasedTriggeringPolicy size="500KB"/>
+      </Policies>
+    </RollingFile>
+    
+    <Console name="STDOUT" target="SYSTEM_OUT">
+      <PatternLayout pattern="%m%n"/>
+    </Console>
+  </Appenders>
+  <Loggers>
+    <Root level="TRACE">
+      <AppenderRef ref="RCXLog" level="ERROR"/>
+      <AppenderRef ref="STDOUT" level="INFO"/>
+      <AppenderRef ref="STDOUT" level="INFO"/>
+    </Root>
+  
+  </Loggers>
+</Configuration>
+
