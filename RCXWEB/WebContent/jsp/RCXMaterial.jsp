@@ -2,7 +2,6 @@
 <%@ page import="org.lacsd.rcx.action.MaterialAction" %>
 <%@ taglib prefix="s" uri="/struts-tags" %> 
 <%@ taglib uri="/taglibs/lacsd.tld" prefix="lacsd" %> 
-<%@ page import="org.lacsd.rcx.action.MaterialAction" %>
 
 
 
