@@ -133,8 +133,6 @@ RCXResources/.settings/CVS/Entries
 
 RCXResources/.settings/CVS/Root
 
-RCXResources/bin/struts.xml
-
 RCXResources/CVS/Entries
 
 RCXResources/CVS/Root
@@ -185,7 +183,6 @@ RCXWEB/src/org/lacsd/rcx/process/CVS/Entries
 
 RCXWEB/src/org/lacsd/rcx/process/CVS/Root
 
-RCXWEB/src/org/lacsd/rcx/process/VendorPO.java
 
 RCXWEB/WebContent/WEB-INF/classes/org/lacsd/rcx/action/VendorAction.class
 
