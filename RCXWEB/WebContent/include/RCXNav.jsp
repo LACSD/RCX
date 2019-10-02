@@ -22,14 +22,35 @@
       </button>
       <div class="collapse navbar-collapse" id="navbar17">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle text-white" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> System Admin&nbsp;</a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink"> <a class="dropdown-item" href="/rcx/jsp/RCXCities.jsp">Cities</a> <a class="dropdown-item" href="./Material.action?actionName=setup">Material</a> <a class="dropdown-item" href="#">Another action</a> <a class="dropdown-item" href="#">Something else here</a> </div>
+          <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle text-white" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> System Admin&nbsp;</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink"> 
+                <a class="dropdown-item" href="#">Archive Data</a> 
+            	<a class="dropdown-item" href="/rcx/jsp/RCXCities.jsp">Cities</a> 
+            	<a class="dropdown-item" href="./Material.action?actionName=setup">Material</a> 
+            	<a class="dropdown-item" href="#">Rates</a> 
+            	<a class="dropdown-item" href="#">Recycle Centers</a> 
+            	<a class="dropdown-item" href="#">Site Container</a>
+            	<a class="dropdown-item" href="#">Site Material</a>
+           	</div>
           </li>
-          <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle text-white" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Accounting&nbsp;</a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink"> <a class="dropdown-item" href="#">Action</a> <a class="dropdown-item" href="#">Another action</a> <a class="dropdown-item" href="#">Something else here</a> </div>
+          <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle text-white" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Accounting&nbsp;</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink"> 
+            	<a class="dropdown-item" href="#">Charities</a> 
+            	<a class="dropdown-item" href="#">Charity Payments</a> 
+            	<a class="dropdown-item" href="#">Monthly Expenses</a> 
+            	<a class="dropdown-item" href="#">Pay Charity Tickets</a> 
+            	<a class="dropdown-item" href="#">Safe Adjustment</a> 
+            	<a class="dropdown-item" href="#">Ticket</a> 
+            	<a class="dropdown-item" href="#">Vendor</a> 
+           	</div>
           </li>
-          <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle text-white" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Site Operations</a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink"> <a class="dropdown-item" href="#">Action</a> <a class="dropdown-item" href="#">Another action</a> <a class="dropdown-item" href="#">Something else here</a> </div>
+          <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle text-white" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Site Operations</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink"> 
+            	<a class="dropdown-item" href="/rcx/jsp/RCXNewTicket.jsp">New Ticket</a> 
+            	<a class="dropdown-item" href="#">Bank Drop</a> 
+            	<a class="dropdown-item" href="#">Close Safe</a> 
+            	<a class="dropdown-item" href="#">Ticket Search</a>
+           	</div>
           </li>
         </ul>
       </div>
