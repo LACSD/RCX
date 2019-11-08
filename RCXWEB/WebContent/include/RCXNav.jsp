@@ -2,6 +2,7 @@
 <%@ taglib prefix="s" uri="/struts-tags" %> 
 <%@ taglib uri="/taglibs/lacsd.tld" prefix="lacsd" %> 
 <script src="/rcx/javascript/jquery-3.4.1.min.js" type="text/javascript" language="javascript" ></script>
+<script src="/rcx/javascript/popper.min.js" type="text/javascript" language="javascript" ></script>
 <script src="/rcx/javascript/bootstrap.min.js" type="text/javascript" language="javascript" ></script>
 
 
@@ -37,7 +38,7 @@
           </li>
           <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle text-white" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Accounting&nbsp;</a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink"> 
-            	<a class="dropdown-item" href="#">Charities</a> 
+            	<a class="dropdown-item" href="./Charity.action?actionName=setup">Charities</a> 
             	<a class="dropdown-item" href="#">Charity Payments</a> 
             	<a class="dropdown-item" href="#">Monthly Expenses</a> 
             	<a class="dropdown-item" href="#">Pay Charity Tickets</a> 
