@@ -187,3 +187,5 @@ RCXWEB/src/org/lacsd/rcx/process/CVS/Root
 RCXWEB/WebContent/WEB-INF/classes/org/lacsd/rcx/action/VendorAction.class
 
 RCXWEB/WebContent/WEB-INF/classes/org/lacsd/rcx/process/VendorPO.class
+
+*.class

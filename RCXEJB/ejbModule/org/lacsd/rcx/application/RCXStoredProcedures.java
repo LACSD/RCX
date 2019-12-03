@@ -20,4 +20,14 @@ public class RCXStoredProcedures {
 	
 	//Vendors
 	public static String RCXVEND001SP = "dbo.RCXVEND001SP";
+	
+	//Rates
+	public static String RCXRATE001SP = "dbo.RCXRATE001SP";
+	
+	//Sites and Materials (Common)
+	public static String RCXCOMM001SP = "dbo.RCXCOMM001SP";
+	
+	//Container Type
+	public static String RCXCONT001SP = "dbo.RCXCONT001SP";
+
 }

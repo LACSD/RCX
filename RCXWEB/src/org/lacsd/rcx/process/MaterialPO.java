@@ -35,4 +35,9 @@ public class MaterialPO {
 	public void delMaterial(MaterialVO matVO) throws LACSDException {
 		materialDAOBean.delMaterial(matVO);
 	}
+	
+	public MaterialVO getMaterialsListBySite (MaterialVO materialVO) throws LACSDException{
+		return materialDAOBean.getMaterialsListBySite(materialVO);
+	}
+	
 }
