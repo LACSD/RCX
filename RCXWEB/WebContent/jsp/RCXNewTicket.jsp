@@ -17,7 +17,7 @@
   <div class="card m-5 bg-primary">
     <div class="card p-5 m-2">
 	<div style="cursor: pointer;" class="btn btn-primary"  onClick="doGet()">
-		Do Get
+		Do Get123
 	</div>
 	<div id="div1">
 		
