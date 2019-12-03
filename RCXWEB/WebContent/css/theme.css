@@ -7157,3 +7157,16 @@ a.text-dark:hover, a.text-dark:focus {
   .table .thead-dark th {
     color: inherit;
     border-color: #dee2e6; } }
+    
+//paginated tables
+/*
+ .pagingNav{font-family: Times New Roman, Arial; color: #000;  font-size: 11pt;font-weight:bold;background-color: #9E9E9E;}
+ .pagingHeader{font-family: Times New Roman, Arial; color: #000;  font-size: 11pt;font-weight:bold;filter:progid:DXImageTransform.Microsoft.Gradient(endColorstr='#9E9E9E', startColorstr='#eeeeee', gradientType='0')}
+ .pagingEvenRow{font-family: Times New Roman, Arial; color: #000;  font-size: 11pt;background-color: #FFFFFF; }
+ .pagingOddRow{font-family: Times New Roman, Arial; color: #000;  font-size: 11pt;background-color: #e4eaec; }
+ .pagingEvenRow.hover{font-family: Times New Roman, Arial; color: #000;  font-size: 11pt;background-color: #FFFFC0; }
+ .pagingOddRow.hover{font-family: Times New Roman, Arial; color: #000;  font-size: 11pt;background-color: #FFFFC0; }
+ 
+ .pagingTable{font-family: Times New Roman, Arial; color: #000;  font-size: 11pt;background-color: #CCCCCC;cell-spacing:1px; padding:2px;  border-style: solid; border-width: 2px; border-color: #17558c;}
+*/
+ 

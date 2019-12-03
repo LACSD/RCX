@@ -90,7 +90,7 @@ public class VendorAction extends RCXGenericAction {
 	 * @throws Throwable
 	 */
 	private String doUpdate() throws LACSDException, Throwable {
-		System.out.println(vendVO);
+		System.out.println(vendVO.getName());
 		new VendorPO().updateVend(vendVO);
 		return doSetup();
 	}

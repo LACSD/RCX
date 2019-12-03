@@ -27,6 +27,7 @@ public class MaterialVO implements Serializable{
 	private static final long serialVersionUID = -5895409545525440350L;
 
 	private short matID;
+	private int siteID;
 	private String name;
 	private String isActive;
 	private String hasCountValue;
@@ -110,6 +111,14 @@ public class MaterialVO implements Serializable{
 	
 	public void setHasBonusValue(String hasBonusValue) {
 		this.hasBonusValue = hasBonusValue;
+	}
+
+	public int getSiteID() {
+		return siteID;
+	}
+
+	public void setSiteID(int siteID) {
+		this.siteID = siteID;
 	}
 	
 	

@@ -29,8 +29,9 @@
                 <a class="dropdown-item" href="#">Archive Data</a> 
             	<a class="dropdown-item" href="/rcx/jsp/RCXCities.jsp">Cities</a> 
             	<a class="dropdown-item" href="./Material.action?actionName=setup">Material</a> 
-            	<a class="dropdown-item" href="#">Rates</a> 
+            	<a class="dropdown-item" href="./Rate.action?actionName=retrieve">Rates</a> 
             	<a class="dropdown-item" href="#">Recycle Centers</a> 
+            	<a class="dropdown-item" href="./Container.action?actionName=setup">Container</a>
             	<a class="dropdown-item" href="#">Site Container</a>
             	<a class="dropdown-item" href="#">Site Material</a>
            	</div>
