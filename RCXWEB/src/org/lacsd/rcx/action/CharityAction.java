@@ -19,6 +19,11 @@ import org.lacsd.rcx.values.CharityVO;
 import org.lacsd.rcx.values.SiteCharityVO;
 
 
+
+/**
+ * @author christophersimmons
+ *
+ */
 public class CharityAction extends RCXGenericAction {
 
 	
@@ -39,22 +44,38 @@ public class CharityAction extends RCXGenericAction {
 	
 	private CharityVO charityVO;
 	
+	
+	/**
+	 * Get siteVO
+	 * @return SiteVO siteVO
+	 */
 	public SiteCharityVO getSiteVO() {
 		return siteVO;
 	}
 
 
+	/**
+	 * Set siteVO
+	 * @param siteVO
+	 */
 	public void setSiteVO(SiteCharityVO siteVO) {
 		this.siteVO = siteVO;
 	}
 
 	
 	
+	/**
+	 * Default Constructor
+	 * Creates Empty CharityVO
+	 */
 	public CharityAction (){
 		charityVO = new CharityVO();
 	}
 	
 	
+	/* (non-Javadoc)
+	 * @see org.lacsd.common.struts2.action.LACSDGenericAction#executeWithResult()
+	 */
 	public String executeWithResult() throws LACSDException, Throwable {
 
 		if (actionName.equals(SET_UP)) {
@@ -75,11 +96,15 @@ public class CharityAction extends RCXGenericAction {
 		return null;
 	}
 	
+	/**
+	 * @return String 
+	 * @throws LACSDException
+	 * @throws Throwable
+	 */
 	private String doSetup() throws LACSDException, Throwable {
 		CharityPO charityPO = new CharityPO();
 		this.charityVO = charityPO.getCharitiesList();
 		this.siteVO = charityPO.getSitesList(); 
-		
 		
 		return SET_UP;
 	}
