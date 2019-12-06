@@ -24,13 +24,12 @@ public class RCXStoredProcedures {
 	//Charities
 	public static String RCXCHAR001SP = "dbo.RCXCHAR001SP";
 	
-	//Rates
-	public static String RCXRATE001SP = "dbo.RCXRATE001SP";
-	
-	//Sites and Materials (Common)
-	public static String RCXCOMM001SP = "dbo.RCXCOMM001SP";
-	
-	//Container Type
-	public static String RCXCONT001SP = "dbo.RCXCONT001SP";
-
+	//Rates 
+	public static String RCXRATE001SP = "dbo.RCXRATE001SP"; 
+	 
+	//Sites and Materials (Common) 
+	public static String RCXCOMM001SP = "dbo.RCXCOMM001SP"; 
+	 
+	//Container Type 
+	public static String RCXCONT001SP = "dbo.RCXCONT001SP"; 
 }

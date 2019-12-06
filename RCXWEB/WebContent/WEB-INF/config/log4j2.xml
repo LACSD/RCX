@@ -19,6 +19,7 @@
     <Root level="TRACE">
       <AppenderRef ref="RCXLog" level="ERROR"/>
       <AppenderRef ref="STDOUT" level="INFO"/>
+      <AppenderRef ref="STDOUT" level="INFO"/>
     </Root>
   
   </Loggers>
