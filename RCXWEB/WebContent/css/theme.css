@@ -1050,7 +1050,7 @@ pre {
   .table td {
     padding: 0.75rem;
     vertical-align: top;
-    border-top: 1px solid #dee2e6; }
+    border-top: 0px solid #dee2e6; }
   .table thead th {
     vertical-align: bottom;
     border-bottom: 2px solid #dee2e6; }
@@ -4686,7 +4686,8 @@ a.close.disabled {
 }
 
 .bg-primary-tr {
-  background-color: #336699ad !important; }
+  background-color: #336699 !important; 
+  }
   
 .bodyBackground{
 	background-image: url("/rcx/images/background.jpg");
@@ -7152,7 +7153,7 @@ a.text-dark:hover, a.text-dark:focus {
       background-color: #fff !important; }
   .table-bordered th,
   .table-bordered td {
-    border: 1px solid #dee2e6 !important; 
+    border: 0px solid #dee2e6 !important; 
     border-radius: 0px 0px 25px 25px}
   .table-dark {
     color: inherit; }
@@ -7176,4 +7177,10 @@ a.text-dark:hover, a.text-dark:focus {
  
  .pagingTable{font-family: Times New Roman, Arial; color: #000;  font-size: 11pt;background-color: #CCCCCC;cell-spacing:1px; padding:2px;  border-style: solid; border-width: 2px; border-color: #17558c;}
 */
+
+.scrollable-menu {
+    height: auto;
+    max-height: 150px;
+    overflow-x: hidden;
+}
  
