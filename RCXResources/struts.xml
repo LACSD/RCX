@@ -61,6 +61,10 @@
      	<action name="Charity" class="org.lacsd.rcx.action.CharityAction"> 
        	   <result name="setup">/jsp/RCXCharity.jsp</result> 
         </action>   
+        
+        <action name="CharityPayment" class="org.lacsd.rcx.action.CharityPaymentAction"> 
+       	   <result name="setup">/jsp/RCXCharityPayment.jsp</result> 
+        </action>  
          
         <action name="Vendor" class="org.lacsd.rcx.action.VendorAction"> 
        	   <result name="setup">/jsp/RCXVendor.jsp</result> 

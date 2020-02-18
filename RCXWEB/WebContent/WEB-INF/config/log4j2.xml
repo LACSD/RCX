@@ -15,13 +15,19 @@
       <PatternLayout pattern="%m%n"/>
     </Console>
   </Appenders>
-  <Loggers>
+<Loggers>
+       <logger name="com.opensymphony.xwork2" level="ON"/>
+       <logger name="org.apache.struts2" level="ON"/>
+       <logger name="freemarker.cache" level=" ON "/>
+       <logger name="freemarker.beans" level=" ON "/>
+  
     <Root level="TRACE">
-      <AppenderRef ref="RCXLog" level="ERROR"/>
+      <AppenderRef ref="WBILog" level="DEBUG"/>
       <AppenderRef ref="STDOUT" level="INFO"/>
       <AppenderRef ref="STDOUT" level="INFO"/>
     </Root>
   
   </Loggers>
+
 </Configuration>
 

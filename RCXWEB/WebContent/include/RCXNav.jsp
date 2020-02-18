@@ -40,7 +40,7 @@
           <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle text-white" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Accounting&nbsp;</a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink"> 
             	<a class="dropdown-item" href="./Charity.action?actionName=setup">Charities</a> 
-            	<a class="dropdown-item" href="#">Charity Payments</a> 
+            	<a class="dropdown-item" href="./CharityPayment.action?actionName=setup">Charity Payments</a> 
             	<a class="dropdown-item" href="#">Monthly Expenses</a> 
             	<a class="dropdown-item" href="#">Pay Charity Tickets</a> 
             	<a class="dropdown-item" href="#">Safe Adjustment</a> 
@@ -48,13 +48,8 @@
             	<a class="dropdown-item" href="./Vendor.action?actionName=setup">Vendor</a> 
            	</div>
           </li>
-          <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle text-white" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Site Operations</a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink"> 
-            	<a class="dropdown-item" href="/rcx/jsp/RCXNewTicket.jsp">New Ticket</a> 
-            	<a class="dropdown-item" href="#">Bank Drop</a> 
-            	<a class="dropdown-item" href="#">Close Safe</a> 
-            	<a class="dropdown-item" href="#">Ticket Search</a>
-           	</div>
+          <li class=""> <a class="nav-link text-white" href="RCXSiteOperation">Site Operations</a>
+          
           </li>
         </ul>
       </div>

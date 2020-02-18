@@ -199,7 +199,7 @@ tr{background-color:#f5f5f5;}
 	      <s:hidden name="actionName" id="tableRetrieve"/>
 
 	          
-	          <table class="table" style="width:80%;margin-left:auto;margin-right:auto;">
+	          <table class="table" style="width:80%;margin-left:auto;margin-right:auto; margin-bottom: 0px">
 
 				<tr>
 					<td>
