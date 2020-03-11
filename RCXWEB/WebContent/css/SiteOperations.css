@@ -1,0 +1,39 @@
+@CHARSET "ISO-8859-1";
+
+.cmdFuncBtn{
+	width: 120px;
+	margin: 0.1em;
+}
+
+.opConsole{
+    width: 1000px;
+    max-width: none;
+    margin-top: 7em;
+}
+
+.cmdFunctions{
+	border: inset;
+	padding-bottom: 0.25em;
+	
+	
+}
+
+.opInfoTxtBox{
+	width: 150px;
+	height: 25px;
+	border: inset;
+	margin: 0.1em;
+	background: #ececec;
+	margin-left: auto; 
+	margin-right: auto;
+	padding-left: 0.25em
+	
+}
+
+input.reportRadio{
+	width: 10%;
+}
+label.reportRadio{
+	width: 90%;
+	text-align: left;
+}

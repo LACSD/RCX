@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Configuration status="WARN">
+<Configuration status="ALL">
   <Appenders>
     <RollingFile name="RCXLog" fileName="F:/Applog/RCX/RCX.log"
                   filePattern="F:/Applog/RCX/RCX-%d{yyyy-MM-dd-HH}-%i.log">

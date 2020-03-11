@@ -77,6 +77,10 @@
         <action name="Container" class="org.lacsd.rcx.action.ContainerAction"> 
        	   <result name="setup">/jsp/RCXContainer.jsp</result> 
         </action>  
+        
+        <action name="SiteOperations" class="org.lacsd.rcx.action.SiteOperationsAction"> 
+       	   <result name="setup">/jsp/RCXSiteOperations.jsp</result> 
+        </action> 
 		
 	</package>	
 		

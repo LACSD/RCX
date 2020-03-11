@@ -118,7 +118,6 @@ function doSubmit() {
 			document.getElementById("invalidDate").style.display = "none";
 		}
 		
-		
 	}
 	
 	//$('#editModal').modal('hide');

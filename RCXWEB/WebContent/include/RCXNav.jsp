@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <%@ taglib prefix="s" uri="/struts-tags" %> 
 <%@ taglib uri="/taglibs/lacsd.tld" prefix="lacsd" %> 
-<script src="/rcx/javascript/jquery-3.4.1.min.js" type="text/javascript" language="javascript" ></script>
-<script src="/rcx/javascript/popper.min.js" type="text/javascript" language="javascript" ></script>
-<script src="/rcx/javascript/bootstrap.min.js" type="text/javascript" language="javascript" ></script>
+
 
 
 
 <html>
 <head >
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
-  <link rel="stylesheet" href="/rcx/css/theme.css" type="text/css">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+	<link rel="stylesheet" href="/rcx/css/theme.css" type="text/css">
+	<script src="/rcx/javascript/jquery-3.4.1.min.js" type="text/javascript"  ></script>
+	<script src="/rcx/javascript/popper.min.js" type="text/javascript" ></script>
+	<script src="/rcx/javascript/bootstrap.min.js" type="text/javascript"  ></script>
 </head>
 
 <body>
@@ -48,8 +49,8 @@
             	<a class="dropdown-item" href="./Vendor.action?actionName=setup">Vendor</a> 
            	</div>
           </li>
-          <li class=""> <a class="nav-link text-white" href="RCXSiteOperation">Site Operations</a>
-          
+          <li class=""> 
+          	<a class="nav-link text-white" href="./SiteOperations.action?actionName=setup">Site Operations</a>
           </li>
         </ul>
       </div>

@@ -35,4 +35,9 @@ public class RCXStoredProcedures {
 	 
 	//Container Type 
 	public static String RCXCONT001SP = "dbo.RCXCONT001SP"; 
+	
+	//SiteOperations
+	public static String RCXTRAN001SP = "dbo.RCXTRAN001SP"; 
 }
+
+
